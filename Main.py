@@ -2,7 +2,7 @@ f = open("Write.py", "r+")
 s = "\t" + f.read()
 f.close()
 s1 = "try:\n"
-s2 = "except:\n \tprint(\"Syntax error\")"
+s2 = "except:\n \tprint(\"Syntax error, mate. Check again. In the meantime, here's a fun fact to keep you occupied: \")\n \tprint(\"One of the guys in charge here, is definitely trying to kill you. Good luck figuring out who it is.\")"
 s3 = ""
 s4 = ""
 s5 = "def main():\n"
