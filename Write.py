@@ -1,2 +1,0 @@
-s = "Jozdien"
-print(s)
