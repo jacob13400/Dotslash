@@ -26,5 +26,9 @@ s_final = s5 + s_final
 f1 = open("Run.py", "w+")
 f1.write(s_final)
 f1.close()
-import Run
-Run.main()
+try:
+	import Run
+	Run.main()
+except:
+	print("Syntax error, mate. Check again. In the meantime, here's a fun fact to keep you occupied:")
+	print("One of the guys in charge here, is definitely trying to kill you. Good luck figuring out who it is.")
