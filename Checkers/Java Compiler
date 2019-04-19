@@ -1,0 +1,66 @@
+import java.io.*;
+
+public class Prog{
+    public static void main(String args[])throws IOException{
+
+String directory = System.getProperty("user.home");  
+String fileName = "Write.txt";  
+String absolutePath = directory + File.separator + "Desktop" +File.separator + fileName;
+
+String s="";
+
+// read the content from file
+try(BufferedReader bufferedReader = new BufferedReader(new FileReader(absolutePath))) {  
+  
+        String line = bufferedReader.readLine();
+        s=line;
+    
+    
+    line = bufferedReader.readLine();
+    while(line != null) {
+        s+="\n"+line;
+        line = bufferedReader.readLine();
+    }
+} catch (FileNotFoundException e) {
+    // exception handling
+} catch (IOException e) {
+    // exception handling
+}
+
+String s1="try:{\n";String s2="\ncatch (Exception e){\nSystem.out.println(\"Syntax error, mate. Check again. In the meantime, here's a fun fact to keep you occupied:\");\n";
+    String s3="";String s4="";
+    String s5="public class Run{\npublic static void main(String args[])throws IOException\n";
+    String s_final="\t";
+    s_final="System.out.println(\"What did I get myself into??\");\n}";
+    
+    s3=s;
+    s4=s5+s1+s3+"}\n"+s2+s_final;
+    s_final =s4;
+    
+directory = System.getProperty("user.home");  
+fileName = "Run.txt";  
+absolutePath = directory + File.separator + "Desktop" +File.separator + fileName;
+
+// write the content in file 
+try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(absolutePath))) {
+    String w="";
+    for(int i =0;i<s_final.length();i++){
+        char a=s_final.charAt(i);
+        if(a=='\n'){
+            bufferedWriter.newLine();
+            bufferedWriter.write(w);
+            
+            w="";
+        }
+        else
+        w+=a;
+    }
+    bufferedWriter.newLine();
+    bufferedWriter.write(w);
+     
+} catch (IOException e) {
+    // exception handling
+}
+
+    }
+}
