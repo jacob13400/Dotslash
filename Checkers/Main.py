@@ -1,4 +1,11 @@
-f = open("Write", "r+")
+from datetime import datetime
+
+#To input the program number
+n=input()
+sz="Pg1.txt"
+sz=sz[:2]+n+sz[3:]
+
+f = open(sz, "r+")
 s = "\t" + f.read()
 f.close()
 s1 = "try:\n"
@@ -37,3 +44,9 @@ except:
 
 else :
 	Run.main()
+
+f=open("log.txt","a")
+utc_time = datetime.utcnow()
+f.write("\n")
+f.write(str(sz)+"\tBUFFER\t")
+f.write(str(utc_time))
