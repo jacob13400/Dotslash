@@ -1,4 +1,5 @@
 import java.io.*;
+import javax.tools.*;
 
 public class Prog{
     public static void main(String args[])throws IOException{
@@ -27,18 +28,18 @@ try(BufferedReader bufferedReader = new BufferedReader(new FileReader(absolutePa
     // exception handling
 }
 
-String s1="try:{\n";String s2="\ncatch (Exception e){\nSystem.out.println(\"Syntax error, mate. Check again. In the meantime, here's a fun fact to keep you occupied:\");\n";
+String s1="try{\n";String s2="\ncatch (Exception e){\nSystem.out.println(\"Syntax error, mate. Check again. In the meantime, here's a fun fact to keep you occupied:\");\n";
     String s3="";String s4="";
-    String s5="public class Run{\npublic static void main(String args[])throws IOException\n";
+    String s5="import java.io.*;\npublic class Run{\npublic static void main(String args[])throws IOException{\n";
     String s_final="\t";
     s_final="System.out.println(\"What did I get myself into??\");\n}";
     
     s3=s;
-    s4=s5+s1+s3+"}\n"+s2+s_final;
+    s4=s5+s1+s3+"}\n"+s2+s_final+"}}";
     s_final =s4;
     
 directory = System.getProperty("user.home");  
-fileName = "Run.txt";  
+fileName = "Run.java";  
 absolutePath = directory + File.separator + "Desktop" +File.separator + fileName;
 
 // write the content in file 
@@ -62,5 +63,13 @@ try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(absolutePa
     // exception handling
 }
 
-    }
+JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+
+try{
+int compilationResult =	compiler.run(null, null, null, absolutePath);
+}
+catch (Exception a){
+	System.out.println("It doest work");
+}
+   }
 }
