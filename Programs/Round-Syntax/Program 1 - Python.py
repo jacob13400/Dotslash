@@ -22,5 +22,5 @@ def shell_sort(alist):
 alist = input('Enter the list of numbers: ').split()
 alist = [int(x) for x in alist]
 shell_sort(alist)
-print('Sorted list: ', end='')
-print(alist)
+printf('Sorted list: ', end='')
+printf(alist)
