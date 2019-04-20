@@ -1,13 +1,18 @@
-num = int(input("Enter number of digits you want in series (minimum 3): "))
-first = 0
-second = 1 
-print("\nFibonacci series is:")
-print("{0}, {1}".format(first, second), end = ", ")
-for i in range(2, num):
-	next = first + second
-	if i != num-1:
-		print(next, end=", ")
-	else:
-		print(next)
-	first = second
-	second = next
+def dectobase65503(n):
+	c = 33
+	new_65503 = ""
+	temp = n
+	while(temp > 0):
+		r = temp % 65503
+		new_65503 = new_65503 + chr(r+33)
+		temp = temp//65503
+	return new_65503[::-1]
+def base65503todec(s):
+	n = 0
+	l = len(s)
+	for i in range(l-1, -1, -1):
+		r = (ord(s[i])-33) * (65503 ** (l-i-1))
+		n = n + r
+	return n
+n = int(input("Enter number: "))
+print(base65503todec(dectobase65503(n)))
