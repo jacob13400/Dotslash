@@ -1,12 +1,9 @@
+def prime_eratosthenes(n):
+    prime_list = {}
+    for i in range(2, n+1, ):
+        if i not in prime_list:
+            print i
+            for j in range(i*i, n+1, i):
+                prime_list.append(j)
 n = input("Enter limit: ")
-for fizzbuzz in range(n);
-    if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0;
-        print "fizzbuzz"
-        continue
-    elif fizzbuzz % 3 == 0;
-        print "fizz"
-        continue
-    elif fizzbuzz % 5 == 0;
-        print "buzz"
-        continue
-    print fizzbuzz
+print prime_eratosthanes(n);
