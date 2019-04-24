@@ -45,8 +45,8 @@ except:
 else :
 	Run.main()
 
-f=open("log.txt","a")
-utc_time = datetime.utcnow()
-f.write("\n")
-f.write(str(sz)+"\tBUFFER\t")
-f.write(str(utc_time))
+	f=open("log.txt","a")
+	utc_time = datetime.utcnow()
+	f.write("\n")
+	f.write(str(sz)+"\tBUFFER\t")
+	f.write(str(utc_time))
