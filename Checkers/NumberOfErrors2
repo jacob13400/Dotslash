@@ -38,7 +38,7 @@ for i in range(c):
     k=0
     #THE LOGIC
     for i in range(l):
-            if(sl1[j]!=sl2[k]):
+        if(sl1[j]!=sl2[k]):
             count+=1
             if(len(s1)-j>len(s2)-k):
                 j+=1
