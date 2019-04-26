@@ -2,7 +2,7 @@ from datetime import datetime
 
 while(1==1)
 #To input the program number
-	n=input("Input the Prgogram Number : ")
+	n=input("\n\nInput the Program Number : ")
 	sz="Pg1.txt"
 	sz=sz[:2]+n+sz[3:]
 
