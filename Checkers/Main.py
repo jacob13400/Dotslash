@@ -1,6 +1,6 @@
 from datetime import datetime
 
-while(1==1)
+while(1==1):
 #To input the program number
 	n=input("\n\nInput the Program Number : ")
 	sz="Pg1.txt"
